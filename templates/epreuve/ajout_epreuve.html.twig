@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Ajout d'une epreuve'{% endblock %}
+{% block content %}
+
+
+
+<div class="container-fluid">   
+        <div class="row justify-content-center">
+            <h1 class="text-center text-primary p-4">Ajouter une épreuve</h1>
+        </div>
+          <div class="row justify-content-center">
+           
+        </div>
+        {{ form_start(form) }}
+				<div class="form-group mx-auto text-center w-25 p-3">
+					{{ form_label(form.code_module, 'Code Module : ', {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.code_module, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.nom_module, 'Nom Module : ', {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.nom_module, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.classe, 'Classe : ', {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.classe, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.nombre_eleve, "Nombre d'élèves : ", {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.nombre_eleve, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.sujet, "Sujet : ", {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.sujet, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.duree, "Durée : ", {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.duree, {'attr': {'class': 'form-control'}}
+					) }}
+					{{ form_label(form.date_epreuve, "Date de l'épreuve : ", {'label_attr': {'class': 'font-weightbold'}}
+					) }}
+					{{ form_widget(form.date_epreuve, {'attr': {'class': 'form-control'}}
+					) }}
+                   
+				</div>
+                <div class="form-group mx-auto text-center w-25 p-3">
+				{{ form_widget(form.ajouter_epreuve, { 'label': "Ajouter l'épreuve", 'attr': {'class': 'btn font-weightbold bg-primary text-white mx-auto text-center'}}) }}
+				</div>
+				{{ form_end(form) }}
+</div>        
+
+{% endblock %}

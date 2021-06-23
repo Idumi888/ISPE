@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{parent()}}Liste des élèves{% endblock %}
+{% block title %}{{parent()}} - Liste des épreuves{% endblock %}
 {% block content %}
 
 
 <div class="container-fluid">
             <div class="row justify-content-center">
-                <h1 class="text-center  p-4">Liste des élèves</h1>
+                <h1 class="text-center  p-4">Liste des épreuves</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-8 p-4 m-0 ">
@@ -15,13 +15,25 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        Nom 
+                                        Code module
                                     </th>
                                     <th scope="col">
-                                        Prénom
+                                        Nom module
                                     </th>
                                     <th scope="col">
-                                        Photo
+                                        Classe
+                                    </th>
+                                    <th scope="col">
+                                        Nombre d'élèves
+                                    </th>
+                                    <th scope="col">
+                                        Sujet
+                                    </th>
+                                    <th scope="col">
+                                        Durée
+                                    </th>
+                                    <th scope="col">
+                                        Date épreuve
                                     </th>
                                     <th scope="col">
                                        
@@ -33,21 +45,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for eleve in eleve %}
+                                {% for epreuve in epreuve %}
                                     <tr class="{{ cycle(['table-primary', 'table-secondary'], loop.index0) }}">
                                    
                                         <td>
-                                            {{eleve.getNom |capitalize }}
+                                            {{epreuve.getCodeModule |capitalize }}
                                         </td>
                                         <td>
-                                            {{eleve.getPrenom |capitalize }}
+                                            {{epreuve.getNomModule |capitalize }}
                                         </td>
                                         <td>
-                                            <img src="{{eleve.getPhoto}}" class="card-img" alt="...">
+                                            {{epreuve.getClasse |capitalize }}
                                         </td>
                                         <td>
-                                        
-    
+                                            {{epreuve.getNombreEleve |capitalize }}
+                                        </td>
+                                        <td>
+                                            {{epreuve.getSujet |capitalize }}
+                                        </td>
+                                        <td>
+                                            {{epreuve.getDuree |capitalize }}
+                                        </td>
+                                        <td>
+                                            {{epreuve.getDateEpreuve |capitalize }}
+                                        </td>
+
+                                        <td>
 
                                             <a href="{{path('modif_eleve',{'id': eleve.id})}}"><span class="material-icons">
                                                 create

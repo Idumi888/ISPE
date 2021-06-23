@@ -17,7 +17,7 @@ class AjoutEleveType extends AbstractType
         $builder
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
-            ->add('photo', FileType::class)
+            ->add('photo', FileType::class, array('data_class' => null))
             ->add('ajouter_eleve', SubmitType::class)
         ;
     }
